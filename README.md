@@ -61,6 +61,7 @@ BOD stands for Brown-out Detection. This feature is intended to avoid improper o
 
 #### Bootloader Menu
 - **Wiring** - The bootloaders included with the Wiring IDE v1.0 build 0101.
+  - **WARNING**: When using the Wiring bootloader, uploading will hang for certain sketches. If you have verbose output enabled you will see an error `avrdude: stk500v2_recv(): checksum error` followed by periodic `avrdude: stk500v2_ReceiveMessage(): timeout`. At this point the sketch has actually successfully been uploaded but the upload process won't finish until you pull the USB cable. I welcome any help in solving this issue or identifying the cause (see https://github.com/per1234/wirino/issues/1).
 - **Optiboot** - This is a more modern bootloader which will free up 1 kB of flash memory. This is actually a [special variant of Optiboot](https://github.com/MCUdude/optiboot_flash) which allows writing to flash from the application. See **File > Examples > Optiboot flash read/write > SerialReadWrite**.
 - **None** - If you use an ISP(in-system programmer) to upload sketches to your Wiring board with this option selected you will be able to use the full flash memory capacity of the microcontroller.
 
@@ -85,6 +86,10 @@ Link Time Optimization (LTO) is a compiler optimization that can significantly r
   - Please ignore, this is caused by a bug in that IDE version and will not cause any problems.
 - A library or sketch doesn't work correctly with wirino.
   - The microcontroller models used on the Wiring boards are different from those used on the Arduino boards. Many libraries and example sketches will work fine on Wiring boards, however the authors of some Arduino libraries or example sketches have only written their hardware specific code to work with the microcontrollers used on standard Arduino boards. MightyCore contains a collection of libraries modified to work with Wiring S and Wiring Play Shield boards. MegaCore contains libraries modified to work with Wiring V1.1 and Wiring V1.0 boards. You can easily modify other libraries/code to support your microcontroller, see https://github.com/MCUdude/MightyCore/blob/master/Library_porting.md for instructions.
+- When using the Wiring bootloader, uploading hangs for certain sketches. If you have verbose output enabled you will see an error `avrdude: stk500v2_recv(): checksum error` followed by periodic `avrdude: stk500v2_ReceiveMessage(): timeout`.
+  - At this point the sketch has actually successfully been uploaded but the upload process won't finish until you pull the USB cable.
+  - If you burn the Optiboot bootloader to your board (**Tools > Bootloader > Optiboot**) the problem will no longer occur.
+  - I welcome any help in solving this issue or identifying the cause (see https://github.com/per1234/wirino/issues/1).
 - `avrdude: verification error; content mismatch` error during lock verification while burning bootloader with AVRISP mkII or other STK500v2 programmer.
   - wirino is not compatible with Arduino AVR Boards 1.6.12 (included with Arduino IDE 1.6.10). Please use any other version of Arduino AVR Boards.
 - `avrdude: AVR Part "build.mcu" not found.` or `avr-g++: error: unrecognized argument in option '-mmcu=build.mcu'`.
