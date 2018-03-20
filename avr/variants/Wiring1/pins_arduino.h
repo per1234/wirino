@@ -14,7 +14,7 @@ Based on the MegaCore:standard variant file created by MCUdude https://github.co
      |>    |              40  41  42  43  44  45  46  47          16  17  18
      |     | >AVC GND ARE PF0 PF1 PF2 PF3 PF4 PF5 PF6 PF7 GND VCC PA0 PA1 PA2
      V     V   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
-     53~  PG5 |                                                             | PA3 19
+     53~* PG5 |                                                             | PA3 19
 RX0  32   PE0 |                                                             | PA4 20
 TX0  33   PE1 |                                                             | PA5 21
      34   PE2 |                                                             | PA6 22
