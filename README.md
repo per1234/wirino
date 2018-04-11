@@ -81,7 +81,7 @@ Link Time Optimization (LTO) is a compiler optimization that can significantly r
 - `The current selected board needs the core 'MegaCore:MCUdude_corefiles/MightyCore:MCUdude_corefiles' that is not installed.` or `Selected board depends on 'MegaCore/MightyCore' core (not installed).` or `fatal error: Arduino.h: No such file or directory`
   - You must [install the required core](#required-cores).
   - Make sure you are using v2.0.0 or newer of the required core.
-- `cc1.exe: error: -fno-fat-lto-objects are supported only with linker plugin.`
+- `Your compiler does not support LTO. Please either upgrade Arduino AVR Boards or select Tools > Compiler LTO > No.`
   - You have [**Tools > Compiler LTO**](#compiler-lto) set to **Yes** but have a version of Arduino AVR Boards installed that doesn't support LTO. Either update to a newer version of Arduino AVR Boards or select **Tools > Compiler LTO > No**.
 - `Bootloader file specified but missing` warning while compiling when using Arduino IDE 1.6.6.
   - Please ignore, this is caused by a bug in that IDE version and will not cause any problems.

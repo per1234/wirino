@@ -321,6 +321,16 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] =
   NOT_ON_TIMER  //31
 };
 #endif  //ARDUINO_MAIN
+
+
+// Provide a more helpful error message when wirino's LTO option is set to Yes but the installed version of Arduino AVR Boards does not support it
+#define WIRINO_GCC_VERSION (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
+#if defined(WIRINO_COMPILER_LTO) && WIRINO_GCC_VERSION < 40902
+#error Your compiler does not support LTO. Please either upgrade Arduino AVR Boards or select Tools > Compiler LTO > No.
+#endif  //defined(WIRINO_COMPILER_LTO) && WIRINO_GCC_VERSION < 40902
+#undef WIRINO_GCC_VERSION
+
+
 #endif  //Pins_Arduino_h
 
 // vim:ai:cin:sts=2 sw=2 ft=cpp

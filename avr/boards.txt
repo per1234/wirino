@@ -89,7 +89,7 @@ WiringS.menu.LTO.yes=Yes
 WiringS.menu.LTO.yes.compiler.c.extra_flags=-flto -fno-fat-lto-objects
 WiringS.menu.LTO.yes.compiler.c.elf.extra_flags=-flto -fuse-linker-plugin
 WiringS.menu.LTO.yes.compiler.S.extra_flags=-flto
-WiringS.menu.LTO.yes.compiler.cpp.extra_flags=-flto
+WiringS.menu.LTO.yes.compiler.cpp.extra_flags=-flto -DWIRINO_COMPILER_LTO
 WiringS.menu.LTO.yes.ltoarcmd=avr-gcc-ar
 
 WiringS.menu.LTO.no=No
@@ -177,7 +177,7 @@ WiringSPlayShield.menu.LTO.yes=Yes
 WiringSPlayShield.menu.LTO.yes.compiler.c.extra_flags=-flto -fno-fat-lto-objects
 WiringSPlayShield.menu.LTO.yes.compiler.c.elf.extra_flags=-flto -fuse-linker-plugin
 WiringSPlayShield.menu.LTO.yes.compiler.S.extra_flags=-flto
-WiringSPlayShield.menu.LTO.yes.compiler.cpp.extra_flags=-flto
+WiringSPlayShield.menu.LTO.yes.compiler.cpp.extra_flags=-flto -DWIRINO_COMPILER_LTO
 WiringSPlayShield.menu.LTO.yes.ltoarcmd=avr-gcc-ar
 
 WiringSPlayShield.menu.LTO.no=No
@@ -278,7 +278,7 @@ WiringV1.menu.LTO.yes=Yes
 WiringV1.menu.LTO.yes.compiler.c.extra_flags=-flto -fno-fat-lto-objects
 WiringV1.menu.LTO.yes.compiler.c.elf.extra_flags=-flto -fuse-linker-plugin
 WiringV1.menu.LTO.yes.compiler.S.extra_flags=-flto
-WiringV1.menu.LTO.yes.compiler.cpp.extra_flags=-flto
+WiringV1.menu.LTO.yes.compiler.cpp.extra_flags=-flto -DWIRINO_COMPILER_LTO
 WiringV1.menu.LTO.yes.ltoarcmd=avr-gcc-ar
 
 WiringV1.menu.LTO.no=No
@@ -366,7 +366,7 @@ WiringV1Sparkfun1281.menu.LTO.yes=Yes
 WiringV1Sparkfun1281.menu.LTO.yes.compiler.c.extra_flags=-flto -fno-fat-lto-objects
 WiringV1Sparkfun1281.menu.LTO.yes.compiler.c.elf.extra_flags=-flto -fuse-linker-plugin
 WiringV1Sparkfun1281.menu.LTO.yes.compiler.S.extra_flags=-flto
-WiringV1Sparkfun1281.menu.LTO.yes.compiler.cpp.extra_flags=-flto
+WiringV1Sparkfun1281.menu.LTO.yes.compiler.cpp.extra_flags=-flto -DWIRINO_COMPILER_LTO
 WiringV1Sparkfun1281.menu.LTO.yes.ltoarcmd=avr-gcc-ar
 
 WiringV1Sparkfun1281.menu.LTO.no=No
@@ -454,7 +454,7 @@ WiringV1Sparkfun2561.menu.LTO.yes=Yes
 WiringV1Sparkfun2561.menu.LTO.yes.compiler.c.extra_flags=-flto -fno-fat-lto-objects
 WiringV1Sparkfun2561.menu.LTO.yes.compiler.c.elf.extra_flags=-flto -fuse-linker-plugin
 WiringV1Sparkfun2561.menu.LTO.yes.compiler.S.extra_flags=-flto
-WiringV1Sparkfun2561.menu.LTO.yes.compiler.cpp.extra_flags=-flto
+WiringV1Sparkfun2561.menu.LTO.yes.compiler.cpp.extra_flags=-flto -DWIRINO_COMPILER_LTO
 WiringV1Sparkfun2561.menu.LTO.yes.ltoarcmd=avr-gcc-ar
 
 WiringV1Sparkfun2561.menu.LTO.no=No
