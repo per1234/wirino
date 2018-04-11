@@ -43,8 +43,8 @@ https://per1234.github.io/wirino/package_per1234_wirino_index.json
 
 #### Required Cores
 **wirino** only provides hardware definitions and bootloader files. You also need to install the core files to support your Wiring board. Follow the installation instructions found on the core's page.
-- Wiring S, Wiring S with Play Shield - [MightyCore](https://github.com/MCUdude/MightyCore)
-- Wiring V1.1, Wiring V1.0 - [MegaCore](https://github.com/MCUdude/MegaCore)
+- Wiring S, Wiring S with Play Shield - [MightyCore](https://github.com/MCUdude/MightyCore) (v2.0.0 or newer required)
+- Wiring V1.1, Wiring V1.0 - [MegaCore](https://github.com/MCUdude/MegaCore) (v2.0.0 or newer required)
 
 
 ## Usage
@@ -78,8 +78,9 @@ Link Time Optimization (LTO) is a compiler optimization that can significantly r
   - Close Boards Manager and then open it again.
 - wirino boards don't appear in the **Tools > Board** menu after manual installation.
   - wirino requires Arduino IDE 1.6.1 or higher.
-- `The current selected board needs the core 'MegaCore:MCUdude_corefiles/MightyCore/MightyCore' that is not installed.` or `Selected board depends on 'MegaCore/MightyCore' core (not installed).` or `fatal error: Arduino.h: No such file or directory`
+- `The current selected board needs the core 'MegaCore:MCUdude_corefiles/MightyCore:MCUdude_corefiles' that is not installed.` or `Selected board depends on 'MegaCore/MightyCore' core (not installed).` or `fatal error: Arduino.h: No such file or directory`
   - You must [install the required core](#required-cores).
+  - Make sure you are using v2.0.0 or newer of the required core.
 - `cc1.exe: error: -fno-fat-lto-objects are supported only with linker plugin.`
   - You have [**Tools > Compiler LTO**](#compiler-lto) set to **Yes** but have a version of Arduino AVR Boards installed that doesn't support LTO. Either update to a newer version of Arduino AVR Boards or select **Tools > Compiler LTO > No**.
 - `Bootloader file specified but missing` warning while compiling when using Arduino IDE 1.6.6.

@@ -24,7 +24,7 @@ WiringS.bootloader.high_fuses=0b{bootloader.OCDEN}{bootloader.JTAGEN}{bootloader
 WiringS.bootloader.unlock_bits=0x3F
 WiringS.bootloader.lock_bits=0x2F
 
-WiringS.build.core=MightyCore:MightyCore
+WiringS.build.core=MightyCore:MCUdude_corefiles
 WiringS.build.mcu=atmega644p
 WiringS.build.variant=WiringS
 WiringS.build.board=WIRING_S
@@ -112,7 +112,7 @@ WiringSPlayShield.bootloader.high_fuses=0b{bootloader.OCDEN}{bootloader.JTAGEN}{
 WiringSPlayShield.bootloader.unlock_bits=0x3F
 WiringSPlayShield.bootloader.lock_bits=0x2F
 
-WiringSPlayShield.build.core=MightyCore:MightyCore
+WiringSPlayShield.build.core=MightyCore:MCUdude_corefiles
 WiringSPlayShield.build.mcu=atmega644p
 WiringSPlayShield.build.variant=WiringSPlayShield
 WiringSPlayShield.build.board=WIRING_PLAY_SHIELD
