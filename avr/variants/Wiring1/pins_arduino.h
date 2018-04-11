@@ -14,7 +14,7 @@ Based on the MegaCore:standard variant file created by MCUdude https://github.co
      |>    |              40  41  42  43  44  45  46  47          16  17  18
      |     | >AVC GND ARE PF0 PF1 PF2 PF3 PF4 PF5 PF6 PF7 GND VCC PA0 PA1 PA2
      V     V   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
-     53~* PG5 |                                                             | PA3 19
+     53~**PG5 |                                                             | PA3 19
 RX0  32   PE0 |                                                             | PA4 20
 TX0  33   PE1 |                                                             | PA5 21
      34   PE2 |                                                             | PA6 22
@@ -32,10 +32,11 @@ MISO 27   PB3 |                                                             | PC
      30~  PB6 |                                                             | PG0 48 LED
                -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
               PB7 PG3 PG4 RST VCC GND XT2 XT1 PD0 PD1 PD2 PD3 PD4 PD5 PD6 PD7
-              31~ 51  52                       0   1   2   3   4   5   6   7
+              31~ 51* 52*                      0   1   2   3   4   5   6   7
                                               SCL SDA RX1 TX1
 
-* Arduino pin 53/PG5 on ATmega1281/2561 only. PEN on ATmega128.
+* On Wiring V1.0 board, these pins are broken out to the unpopulated Q1 footprint. On Wiring Mini V1.0, the Q3 footprint.
+** Arduino pin 53/PG5 on ATmega1281/2561 only. PEN on ATmega128.
 ~ PWM
 */
 
