@@ -4,7 +4,7 @@ wirino
 ==========
 Use your Wiring boards with the [Arduino](http://arduino.cc) IDE
 
-The [Wiring](http://wiring.org.co/) project was initiated in 2003 by Hernando Barragán. In 2005 Wiring was used as the starting point and inspiration for the creation of Arduino. The Wiring IDE is no longer under active development and the Wiring boards are no longer in production, though the Wiring S is [still available for purchase](https://roguerobotics.com/collections/roguerobotics/products/wiring-s). For more Wiring history see https://arduinohistory.github.io.
+The [Wiring](http://wiring.org.co/) project was initiated in 2003 by Hernando Barragán. In 2005 Wiring was used as the starting point and inspiration for the creation of Arduino. The Wiring IDE is no longer under active development and the Wiring boards are no longer in production. For more Wiring history see https://arduinohistory.github.io.
 
 In addition to the Wiring boards hardware definitions, this package provides [advanced configuration options](#usage). The [referenced core](#required-cores) libraries also provide [Wiring API functions](https://github.com/MCUdude/MightyCore/blob/master/Wiring_reference.md).
 
@@ -119,3 +119,21 @@ Pull requests or issue reports are welcome! Please see the [contribution rules](
 ## Wiring Theme
 If you like Wiring and Arduino you might be interested in a theme for the Arduino IDE that will make it look like the Wiring IDE: \
 https://github.com/per1234/ino-themes/tree/Wiring-theme
+
+
+# Wiring Boards
+The primary purpose of this project is to provide Arduino IDE support for existing Wiring boards. Although no longer being produces there are still some boards available for purchase and design files you can use to to make your own.
+- Wiring S
+  - Purchase: https://roguerobotics.com/collections/roguerobotics/products/wiring-s
+  - Board design files: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/wiring/Wiring-S-V10.zip
+- Wiring S Play Shield
+  - Purchase: http://www.1strecon.org/TheShoppe/wiring/wiringsshield.shtml
+  - Board design files: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/wiring/Wiring-S-Play-Shield-Adapter-V10-KiCAD.zip
+- Wiring V1.0
+  - Board design files: http://wiring.org.co/download/Wiringhardware.zip
+  - Schematic: http://wiring.org.co/download/wiring-Rev0004.pdf
+  - Updated design files by WestfW: https://hackaday.io/project/62511-revive-wiring
+- Wiring Mini V1.0
+  - Board design files: http://wiring.org.co/download/WiringMini.zip
+  - Schematic: http://wiring.org.co/download/WiringMini.pdf
+- Wiring V1.1: I have not found design files for this board. If you know where they may be found please submit an [issue](https://github.com/per1234/wirino/issues/new) or [pull request](https://github.com/per1234/wirino/compare).
