@@ -11,7 +11,7 @@ env:
     - SKETCHBOOK_FOLDER="${HOME}/Arduino"
 
     # Recent landmark IDE versions
-    - IDE_VERSION_LIST='("1.6.5-r5" "1.6.7" "1.6.9" "1.6.11" "1.6.13" "1.8.0" "1.8.5" "newest")'
+    - IDE_VERSION_LIST='("1.6.5-r5" "1.6.9" "1.6.11" "1.6.13" "1.8.5" "newest")'
     # LTO requires Arduino AVR Boards 1.6.12 (bundled with Arduino IDE 1.6.10) or newer. However, Arduino IDE 1.6.10 and Arduino AVR Boards 1.6.12 had some serious issues so that version is skipped.
     - OLDEST_IDE_VERSION_TO_TEST_WITH_LTO='1.6.11'
 
