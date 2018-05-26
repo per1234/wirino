@@ -121,8 +121,8 @@ If you like Wiring and Arduino you might be interested in a theme for the Arduin
 https://github.com/per1234/ino-themes/tree/Wiring-theme
 
 
-# Wiring Boards
-The primary purpose of this project is to provide Arduino IDE support for existing Wiring boards. Although no longer being produces there are still some boards available for purchase and design files you can use to to make your own.
+## Wiring Boards
+The primary purpose of this project is to provide Arduino IDE support for existing Wiring boards. Although no longer being produced, there are still some boards available for purchase and design files you can use to to make your own.
 - Wiring S
   - Purchase: https://roguerobotics.com/collections/roguerobotics/products/wiring-s
   - Board design files: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/wiring/Wiring-S-V10.zip
