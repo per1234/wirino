@@ -31,13 +31,18 @@ before_install:
   # Check for files that don't end in a newline (https://stackoverflow.com/a/25686825)
   - find . -path './.git' -prune -or -path './avr/bootloaders' -prune -or -type f -print0 | xargs -0 -L1 bash -c 'if test "$(grep --files-with-matches --binary-files=without-match --max-count=1 --regexp='.*' "$0")" && test "$(tail --bytes=1 "$0")"; then echo "No new line at end of $0."; false; fi'
 
-  - git clone https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts"
-  - cd "${HOME}/scripts"
+  # Check for typos
+  - git clone https://github.com/ss18/grep-typos.git "${HOME}/scripts/grep-typos"
+  - find . -path "./.git" -prune -or -path './avr/bootloaders' -prune -or -type f -print0 | xargs --null --max-args=1 bash "${HOME}/scripts/grep-typos/grep_typos.sh" "$0"
+  - rm "${HOME}/scripts/grep-typos" --recursive --force
+
+  - git clone https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts/arduino-ci-script"
+  - cd "${HOME}/scripts/arduino-ci-script"
   # Get new tags from the remote
   - git fetch --tags
   # Checkout the latest tag
   - git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
-  - source "${HOME}/scripts/arduino-ci-script.sh"
+  - source "${HOME}/scripts/arduino-ci-script/arduino-ci-script.sh"
 
   # These functions can be used to get verbose output for debugging the script
   # set_script_verbosity can be set to values from 0 - 2 (verbosity off - maximum verbosity)
