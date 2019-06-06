@@ -1,2 +1,1 @@
-Please read the Pull Requests section of the Contribution Rules before submitting a pull request:
-https://github.com/per1234/wirino/blob/master/CONTRIBUTING.md
+Please read the Issues section of the Contributing Rules at the "Contributing" link to the right before submitting an issue report.
