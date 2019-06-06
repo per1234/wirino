@@ -1,1 +1,2 @@
-Read the Issues section of the Contribution Rules at the "guidelines for contributing" link above before submitting an issue report.
+Please read the Issues section of the Contribution Rules before submitting an issue report:
+https://github.com/per1234/wirino/blob/master/CONTRIBUTING.md
