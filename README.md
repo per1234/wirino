@@ -8,6 +8,20 @@ The [Wiring](http://wiring.org.co/) project was initiated in 2003 by Hernando Ba
 
 In addition to the Wiring boards hardware definitions, this package provides [advanced configuration options](#usage). The [referenced core](#required-cores) libraries also provide [Wiring API functions](https://github.com/MCUdude/MightyCore/blob/master/Wiring_reference.md).
 
+## Table of contents
+
+<!-- toc -->
+
+- [Supported Boards](#supported-boards)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
+- [Wiring Theme](#wiring-theme)
+- [Wiring Boards](#wiring-boards)
+
+<!-- tocstop -->
 
 ## Supported Boards
 
