@@ -1,7 +1,7 @@
 <img src="wirino.svg" alt="logo" height="85" align="right" />
 
-wirino
-==========
+# wirino
+
 Use your Wiring boards with the [Arduino](http://arduino.cc) IDE
 
 The [Wiring](http://wiring.org.co/) project was initiated in 2003 by Hernando Barragán. In 2005 Wiring was used as the starting point and inspiration for the creation of Arduino. The Wiring IDE is no longer under active development and the Wiring boards are no longer in production. For more Wiring history see https://arduinohistory.github.io.
@@ -10,6 +10,7 @@ In addition to the Wiring boards hardware definitions, this package provides [ad
 
 
 ## Supported Boards
+
 - Wiring S
 - Wiring S with Play Shield
 - Wiring V1.0
@@ -17,14 +18,16 @@ In addition to the Wiring boards hardware definitions, this package provides [ad
 - Wiring V1.1 ATmega1281
 - Wiring V1.1 ATmega2561
 
-
 ## Installation
+
 There are two options for installing **wirino** in the Arduino IDE:
+
 #### Boards Manager Installation (requires Arduino IDE version 1.6.4 or greater)
+
 - Open the Arduino IDE.
 - Open the **File > Preferences** menu item.
 - Enter the following URL in **Additional Boards Manager URLs**: \
-https://per1234.github.io/wirino/package_per1234_wirino_index.json
+  https://per1234.github.io/wirino/package_per1234_wirino_index.json
 - Open the **Tools > Board > Boards Manager...** menu item.
 - Wait for the platform indexes to finish downloading.
 - Scroll down until you see the **wirino** entry and click on it.
@@ -32,6 +35,7 @@ https://per1234.github.io/wirino/package_per1234_wirino_index.json
 - After installation is complete close the **Boards Manager** window.
 
 #### Manual Installation (requires Arduino IDE version 1.6.1 or greater)
+
 - Download wirino
   - Stable releases: https://github.com/per1234/wirino/releases
   - Beta test version: https://github.com/per1234/wirino/archive/master.zip
@@ -40,40 +44,46 @@ https://per1234.github.io/wirino/package_per1234_wirino_index.json
 - Move the **wirino** folder into the **hardware** subfolder of your sketchbook folder. You can find the location of your sketchbook folder in the Arduino IDE at **File > Preferences > Sketchbook location:**.
 - If the Arduino IDE is running then restart it.
 
-
 #### Required Cores
+
 **wirino** only provides hardware definitions and bootloader files. You also need to install the core files to support your Wiring board. Follow the installation instructions found on the core's page.
+
 - Wiring S, Wiring S with Play Shield - [MightyCore](https://github.com/MCUdude/MightyCore) (v2.0.0 or newer required)
 - Wiring V1.1, Wiring V1.0 - [MegaCore](https://github.com/MCUdude/MegaCore) (v2.0.0 or newer required)
 
-
 ## Usage
+
 After installation, several new boards will be added under the **wirino** section of the **Tools > Board** menu. When any of these boards are selected additional menus will appear under the **Tools** menu.
 
 Whenever you change a setting in any of these menus other than **Compiler LTO** you need to do a **Tools > Burn Bootloader** to reconfigure your board.
 
 #### BOD Menu
+
 BOD stands for Brown-out Detection. This feature is intended to avoid improper operation caused by insufficient supply voltage. If the supply voltage drops below the BOD value then the microcontroller is reset.
 
 #### Clock Menu
+
 - **16MHz** - This is the default clock speed of the Wiring boards.
 - **8MHz Internal** - May be used to reduce power consumption.
 
 #### Bootloader Menu
+
 - **Wiring** - The bootloaders included with the Wiring IDE v1.0 build 0101.
   - **WARNING**: When using the Wiring bootloader, uploading will hang for certain sketches. If you have verbose output enabled you will see an error `avrdude: stk500v2_recv(): checksum error` followed by periodic `avrdude: stk500v2_ReceiveMessage(): timeout`. At this point the sketch has actually successfully been uploaded but the upload process won't finish until you pull the USB cable. I welcome any help in solving this issue or identifying the cause (see https://github.com/per1234/wirino/issues/1).
 - **Optiboot** - This is a more modern bootloader which will free up 1 kB of flash memory. This is actually a [special variant of Optiboot](https://github.com/MCUdude/optiboot_flash) which allows writing to flash from the application. See **File > Examples > Optiboot flash read/write > SerialReadWrite**.
 - **None** - If you use an ISP (in-system programmer) to upload sketches to your Wiring board with this option selected you will be able to use the full flash memory capacity of the microcontroller.
 
 #### Preserve EEPROM
+
 - **Yes** - The contents of the EEPROM will be preserved through **Tools > Burn Bootloader** and **Sketch > Upload Using Programmer**.
 - **No** - The contents of the EEPROM will not be preserved through **Tools > Burn Bootloader** and **Sketch > Upload Using Programmer**.
 
 #### Compiler LTO
+
 Link Time Optimization (LTO) is a compiler optimization that can significantly reduce memory usage of your sketch. It requires Arduino AVR Boards 1.6.12 or newer to be installed.
 
-
 ## Troubleshooting
+
 - **wirino** entry doesn't appear in Boards Manager when using Arduino IDE 1.6.6.
   - Close Boards Manager and then open it again.
 - wirino boards don't appear in the **Tools > Board** menu after manual installation.
@@ -100,12 +110,12 @@ Link Time Optimization (LTO) is a compiler optimization that can significantly r
 - I found a bug.
   - Please read the [Contribution Rules](https://github.com/per1234/wirino/blob/master/CONTRIBUTING.md) for instructions on reporting it.
 
-
 ## Contributing
+
 Pull requests or issue reports are welcome! Please see the [contribution rules](https://github.com/per1234/wirino/blob/master/CONTRIBUTING.md) for instructions.
 
-
 ## Acknowledgments
+
 - [Hernando Barragán](http://wiring.org.co) - Founder of Wiring.
 - [MCUdude](https://github.com/MCUdude)
   - [MightyCore](https://github.com/MCUdude/MightyCore)
@@ -115,14 +125,15 @@ Pull requests or issue reports are welcome! Please see the [contribution rules](
   - [Modifications to Optiboot](https://github.com/MCUdude/optiboot_flash) source code to support the ATmega128.
 - [majekw](https://github.com/majekw) - [Modifications to Optiboot](https://github.com/majekw/optiboot) to support microcontrollers with larger flash sizes and writing to flash from the application.
 
-
 ## Wiring Theme
+
 If you like Wiring and Arduino you might be interested in a theme for the Arduino IDE that will make it look like the Wiring IDE: \
 https://github.com/per1234/ino-themes/tree/Wiring-theme
 
-
 ## Wiring Boards
+
 The primary purpose of this project is to provide Arduino IDE support for existing Wiring boards. Although no longer being produced, there are still some boards available for purchase and design files you can use to to make your own.
+
 - Wiring S
   - Purchase: https://roguerobotics.com/collections/roguerobotics/products/wiring-s
   - Board design files: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/wiring/Wiring-S-V10.zip
