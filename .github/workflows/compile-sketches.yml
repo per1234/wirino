@@ -1,0 +1,131 @@
+name: Compile Sketches
+
+# See: https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows
+on:
+  push:
+    paths:
+      - ".github/workflows/compile-sketches.yml"
+      - "cores/**"
+      - "libraries/**"
+      - "variants/**"
+      - "boards.txt"
+      - "platform.txt"
+  pull_request:
+    paths:
+      - ".github/workflows/compile-sketches.yml"
+      - "cores/**"
+      - "libraries/**"
+      - "variants/**"
+      - "boards.txt"
+      - "platform.txt"
+  schedule:
+    # Run every Tuesday at 8 AM UTC to catch breakage caused by changes to external resources (libraries, platforms).
+    - cron: "0 8 * * TUE"
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      EXAMPLES_CHECKOUT_PATH: extras/arduino-examples
+      SKETCHES_REPORTS_PATH: sketches-reports
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        board:
+          - WiringS
+          - WiringSPlayShield
+          - WiringV1
+          - WiringV1Sparkfun1281
+          - WiringV1Sparkfun2561
+        clock:
+          - 16MHz
+          - 8MHz
+        lto:
+          - yes
+          - no
+
+        # Associate additional board option values with arbitrary combinations of the ones set via the matrix in order
+        # to test all board option values for each board.
+        include:
+          - clock: 16MHz
+            lto: yes
+            bod: 2V7
+            bootloader: wiring
+            eesave: yes
+          - clock: 16MHz
+            lto: no
+            bod: 4V3
+            bootloader: optiboot
+            eesave: no
+          - board: WiringV1
+            clock: 16MHz
+            lto: no
+            bod: 4V0
+            bootloader: optiboot
+            eesave: no
+          - clock: 8MHz
+            lto: yes
+            bod: 1V8
+            bootloader: none
+            eesave: yes
+          - board: WiringV1
+            clock: 8MHz
+            lto: yes
+            bod: disabled
+            bootloader: none
+            eesave: yes
+          - clock: 8MHz
+            lto: no
+            bod: disabled
+            bootloader: wiring
+            eesave: no
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Checkout built-in examples
+        uses: actions/checkout@v2
+        with:
+          repository: arduino/arduino-examples
+          path: ${{ env.EXAMPLES_CHECKOUT_PATH }}
+
+      - name: Delete incompatible examples
+        run: |
+          # These boards do not support native USB
+          rm --recursive "${{ env.EXAMPLES_CHECKOUT_PATH }}/examples/09.USB"
+
+      - name: Compile examples
+        uses: arduino/compile-sketches@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fqbn: wirino:avr:${{ matrix.board }}:clock=${{ matrix.clock }},BOD=${{ matrix.bod }},bootloader=${{ matrix.bootloader }},EESAVE=${{ matrix.eesave }},LTO=${{ matrix.lto }}
+          platforms: |
+            # Overwrite the Boards Manager installation with the platform from the repository.
+            - source-path: avr
+              name: wirino:avr
+            # Install platform dependencies.
+            - name: arduino:avr
+            - source-url: https://mcudude.github.io/MegaCore/package_MCUdude_MegaCore_index.json
+              name: MegaCore:avr
+            - source-url: https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
+              name: MightyCore:avr
+          libraries: |
+            - name: CapacitiveSensor
+            - name: LiquidCrystal
+            - name: Servo
+          sketch-paths: |
+            - ${{ env.EXAMPLES_CHECKOUT_PATH }}/examples
+          enable-deltas-report: true
+          sketches-report-path: ${{ env.SKETCHES_REPORTS_PATH }}
+
+      - name: Save memory usage change report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ env.SKETCHES_REPORTS_PATH }}
+          name: ${{ env.SKETCHES_REPORTS_PATH }}
