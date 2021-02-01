@@ -15,19 +15,6 @@ env:
 matrix:
   include:
 
-    # Check all files in the repository for commonly misspelled words
-    - name: 'Spell Check'
-      language: python
-      python: 3.6
-      install:
-        # Install codespell
-        # https://github.com/codespell-project/codespell
-        - pip install codespell
-
-      script:
-        - codespell --skip="${TRAVIS_BUILD_DIR}/.git","${TRAVIS_BUILD_DIR}/avr/bootloaders" "${TRAVIS_BUILD_DIR}"
-
-
     # Use the Arduino IDE to compile for each of the boards
     - name: 'Compilation Test'
       language: generic
