@@ -20,6 +20,7 @@ In addition to the Wiring boards hardware definitions, this package provides [ad
 - [Acknowledgments](#acknowledgments)
 - [Wiring Theme](#wiring-theme)
 - [Wiring Boards](#wiring-boards)
+- [License](#license)
 
 <!-- tocstop -->
 
@@ -162,3 +163,9 @@ The primary purpose of this project is to provide Arduino IDE support for existi
   - Board design files: http://wiring.org.co/download/WiringMini.zip
   - Schematic: http://wiring.org.co/download/WiringMini.pdf
 - Wiring V1.1: I have not found design files for this board. If you know where they may be found please submit an [issue](https://github.com/per1234/wirino/issues/new) or [pull request](https://github.com/per1234/wirino/compare).
+
+## License
+
+See [the license file](LICENSE).
+
+That license applies to all files included with this package unless a different license is included in the file or subfolder.
