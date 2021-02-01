@@ -21,6 +21,7 @@ jobs:
           find . \
             -path './.git' -prune -or \
             -path './avr/bootloaders' -prune -or \
+            -path './avr/scripts' -prune -or \
             -type f \
             -exec \
               grep \
@@ -44,6 +45,7 @@ jobs:
           find . \
             -path './.git' -prune -or \
             -path './avr/bootloaders' -prune -or \
+            -path './avr/scripts' -prune -or \
             \( \
               -not -name '*.py' -and \
               -type f \
@@ -81,6 +83,7 @@ jobs:
           find . \
             -path './.git' -prune -or \
             -path './avr/bootloaders' -prune -or \
+            -path './avr/scripts' -prune -or \
             \( \
               -not -name 'keywords.txt' -and \
               -not -name 'Makefile' -and \
@@ -114,6 +117,7 @@ jobs:
           find . \
             -path './.git' -prune -or \
             -path './avr/bootloaders' -prune -or \
+            -path './avr/scripts' -prune -or \
             \( \
               -not -name '*.hex' -and \
               -not -name '*.py' -and \
@@ -147,6 +151,7 @@ jobs:
           find . \
             -path './.git' -prune -or \
             -path './avr/bootloaders' -prune -or \
+            -path './avr/scripts' -prune -or \
             \( \
               -not -name '*.hex' -and \
               -type f \
@@ -176,6 +181,7 @@ jobs:
           find . \
             -path './.git' -prune -or \
             -path './avr/bootloaders' -prune -or \
+            -path './avr/scripts' -prune -or \
             \( \
               -not -name '*.py' -and \
               -type f \
@@ -212,6 +218,7 @@ jobs:
           find . \
             -path './.git' -prune -or \
             -path './avr/bootloaders' -prune -or \
+            -path './avr/scripts' -prune -or \
             -type f \
             -print0 \
           | \
