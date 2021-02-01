@@ -36,12 +36,6 @@ matrix:
         - set_application_folder "$APPLICATION_FOLDER"
         - set_sketchbook_folder "$SKETCHBOOK_FOLDER"
 
-        # Check for board definition errors that don't affect compilation
-        - set_board_testing 'true'
-
-        # Check for library issues that don't affect compilation
-        - set_library_testing 'false'
-
         # Install all IDE version required by the job
         - install_ide "$IDE_VERSION_LIST"
 
